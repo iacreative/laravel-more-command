@@ -27,4 +27,17 @@ return [
     |
     */
     'service-namespace' => 'App',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Trait classes namespace
+    |--------------------------------------------------------------------------
+    |
+    | This value defines the default namespace for created Trait classes.
+    | For example if the value is 'App/Http', it will create repository classes
+    | inside 'App/Http/Traits' and class namespace will
+    | 'App/Http/Traits/{ClassName}'.
+    |
+    */
+    'trait-namespace' => 'App',
 ];

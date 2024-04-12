@@ -65,13 +65,26 @@ class CreateModuleTraitCommand extends CommandGenerator
     }
 
     /**
+     * Replace App with empty string for resolve namespace
+     *
+     * @return string
+     */
+    private function resolveNamespace(): string
+    {
+        if (strpos($this->getServiceNamespaceFromConfig(), self::APP_PATH) === 0) {
+            return str_replace(self::APP_PATH, '', $this->getServiceNamespaceFromConfig());
+        }
+        return '/' . $this->getServiceNamespaceFromConfig();
+    }
+
+    /**
      * getDestinationFilePath
      *
      * @return string
      */
     protected function getDestinationFilePath(): string
     {
-        return base_path()."/Modules/{$this->argument('module')}"."/Traits".'/'. $this->getTraitName() . '.php';
+        return base_path()."/Modules/{$this->argument('module')}"."/{$this->resolveNamespace()}/Traits".'/'. $this->getTraitName() . '.php';
     }
 
 

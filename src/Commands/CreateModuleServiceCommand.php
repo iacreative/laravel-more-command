@@ -77,6 +77,19 @@ class CreateModuleServiceCommand extends CommandGenerator
     }
 
     /**
+     * Replace App with empty string for resolve namespace
+     *
+     * @return string
+     */
+    private function resolveNamespace(): string
+    {
+        if (strpos($this->getServiceNamespaceFromConfig(), self::APP_PATH) === 0) {
+            return str_replace(self::APP_PATH, '', $this->getServiceNamespaceFromConfig());
+        }
+        return '/' . $this->getServiceNamespaceFromConfig();
+    }
+
+    /**
      * Return destination path for class file publish
      * getDestinationFilePath
      *
@@ -84,7 +97,7 @@ class CreateModuleServiceCommand extends CommandGenerator
      */
     protected function getDestinationFilePath(): string
     {
-        return base_path()."/Modules/{$this->argument('module')}"."/Services".'/'. $this->getServiceName() . '.php';
+        return base_path()."/Modules/{$this->argument('module')}"."/{$this->resolveNamespace()}/Services".'/'. $this->getServiceName() . '.php';
     }
 
 

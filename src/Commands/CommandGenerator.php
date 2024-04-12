@@ -53,6 +53,52 @@ abstract class CommandGenerator extends Command
     }
 
     /**
+     * Get Trait Namespace From Config
+     * @return string
+     */
+    public function getTraitNamespaceFromConfig(): string
+    {
+        return config('laravel-more-command.trait-namespace') ?? 'App';
+    }
+
+
+
+
+    /**
+     * Get Repository Namespace From Config
+     * @return string
+     */
+    public function getModuleRepositoryNamespaceFromConfig(): string
+    {
+        return config('laravel-more-command.module-repository-namespace') ?? 'App';
+    }
+
+
+    /**
+     * Get Service Namespace From Config
+     * @return string
+     */
+    public function getModuleServiceNamespaceFromConfig(): string
+    {
+        return config('laravel-more-command.module-service-namespace') ?? 'App';
+    }
+
+    /**
+     * Get Trait Namespace From Config
+     * @return string
+     */
+    public function getModuleTraitNamespaceFromConfig(): string
+    {
+        return config('laravel-more-command.module-trait-namespace') ?? 'App';
+    }
+
+
+
+
+
+
+
+    /**
      * Return the default namespace for class
      * getDefaultNamespace
      *
