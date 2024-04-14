@@ -83,10 +83,10 @@ class CreateModuleServiceCommand extends CommandGenerator
      */
     private function resolveNamespace(): string
     {
-        if (strpos($this->getServiceNamespaceFromConfig(), self::APP_PATH) === 0) {
-            return str_replace(self::APP_PATH, '', $this->getServiceNamespaceFromConfig());
+        if (strpos($this->getModuleServiceNamespaceFromConfig(), self::APP_PATH) === 0) {
+            return str_replace(self::APP_PATH, '', $this->getModuleServiceNamespaceFromConfig());
         }
-        return '/' . $this->getServiceNamespaceFromConfig();
+        return '/' . $this->getModuleServiceNamespaceFromConfig();
     }
 
     /**
