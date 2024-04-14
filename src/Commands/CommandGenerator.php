@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 abstract class CommandGenerator extends Command
 {
-    public const APP_PATH = 'App';
+    public const APP_PATH = '';
 
     /**
      * argumentName
@@ -22,7 +22,6 @@ abstract class CommandGenerator extends Command
      * @return string
      */
     abstract protected function getTemplateContents(): string;
-
 
     /**
      * Return the destination path for publish created class file.
@@ -42,7 +41,6 @@ abstract class CommandGenerator extends Command
         return config('laravel-more-command.repository-namespace') ?? 'App';
     }
 
-
     /**
      * Get Service Namespace From Config
      * @return string
@@ -61,9 +59,6 @@ abstract class CommandGenerator extends Command
         return config('laravel-more-command.trait-namespace') ?? 'App';
     }
 
-
-
-
     /**
      * Get Repository Namespace From Config
      * @return string
@@ -72,7 +67,6 @@ abstract class CommandGenerator extends Command
     {
         return config('laravel-more-command.module-repository-namespace') ?? 'App';
     }
-
 
     /**
      * Get Service Namespace From Config
@@ -92,12 +86,6 @@ abstract class CommandGenerator extends Command
         return config('laravel-more-command.module-trait-namespace') ?? 'App';
     }
 
-
-
-
-
-
-
     /**
      * Return the default namespace for class
      * getDefaultNamespace
@@ -108,7 +96,6 @@ abstract class CommandGenerator extends Command
     {
         return '';
     }
-
 
     /**
      * Return the default namespace type for interface
@@ -121,7 +108,6 @@ abstract class CommandGenerator extends Command
         return '';
     }
 
-
     /**
      * Return a class name
      * getClass
@@ -132,7 +118,6 @@ abstract class CommandGenerator extends Command
     {
         return class_basename($this->argument($this->argumentName));
     }
-
 
     /**
      * Generate class namespace dynamically
@@ -153,7 +138,6 @@ abstract class CommandGenerator extends Command
         return trim($namespace, '\\');
     }
 
-
     /**
      * Generate interface namespace dynamically
      * getInterfaceNamespace
@@ -172,7 +156,6 @@ abstract class CommandGenerator extends Command
 
         return trim($namespace, '\\');
     }
-
 
     /**
      * checkModuleExists
