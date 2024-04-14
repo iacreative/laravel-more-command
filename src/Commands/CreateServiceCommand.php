@@ -83,7 +83,7 @@ class CreateServiceCommand extends CommandGenerator
     private function resolveNamespace(): string
     {
         if (strpos($this->getServiceNamespaceFromConfig(), self::APP_PATH) === 0) {
-            return str_replace(self::APP_PATH, '', $this->getServiceNamespaceFromConfig());
+            return '/' . str_replace(self::APP_PATH, '', $this->getServiceNamespaceFromConfig());
         }
         return '/' . $this->getServiceNamespaceFromConfig();
     }
