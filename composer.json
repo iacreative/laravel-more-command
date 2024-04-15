@@ -1,14 +1,15 @@
 {
-    "name": "iacreative/laravel-more-command",
+    "name": "theanik/laravel-more-command",
     "require": {},
     "description": "Create a Repository and Service class and trait using Artisan CLI",
     "license": "MIT",
     "authors": [
         {
-            "name": "iacreative",
-            "email": "ia2design@hotmail.com"
+            "name": "Anwar Hossain Anik",
+            "email": "anwar.anik33@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
     "type": "library",
     "extra": {
         "laravel": {
