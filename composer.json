@@ -9,7 +9,7 @@
             "email": "ia2design@hotmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "type": "library",
     "extra": {
         "laravel": {
