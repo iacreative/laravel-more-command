@@ -105,7 +105,7 @@ class CreateModuleTraitCommand extends CommandGenerator
      */
     public function getDefaultNamespace() : string
     {
-        return "Modules\\{$this->argument('module')}\\Traits";
+        return "Modules\\{$this->argument('module')}\\App\\Traits";
     }
 
 

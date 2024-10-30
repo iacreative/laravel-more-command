@@ -121,7 +121,7 @@ class CreateModuleServiceCommand extends CommandGenerator
      */
     public function getDefaultNamespace() : string
     {
-        return "Modules\\{$this->argument('module')}\\Services";
+        return "Modules\\{$this->argument('module')}\\App\\Services";
     }
 
 

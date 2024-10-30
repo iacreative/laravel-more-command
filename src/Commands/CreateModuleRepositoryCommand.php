@@ -151,7 +151,7 @@ class CreateModuleRepositoryCommand extends CommandGenerator
      */
     public function getDefaultNamespace() : string
     {
-        return "Modules\\{$this->argument('module')}\\Repositories";
+        return "Modules\\{$this->argument('module')}\\App\\Repositories";
     }
 
     /**
